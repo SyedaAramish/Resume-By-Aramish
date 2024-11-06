@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shareable Resume Builder by Syeda Aramish</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Shareable Resume Builder by Syeda Aramish</h1>
+    </header>
+
+    <!-- Form Section -->
+    <section class="form-section">
+        <form id="resumeForm">
+            <h2>Enter Your Details</h2>
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="jobTitle">Job Title:</label>
+            <input type="text" id="jobTitle" name="jobTitle" required>
+
+            <label for="about">About Me:</label>
+            <textarea id="about" name="about" rows="3" required></textarea>
+
+            <label for="education">Education:</label>
+            <textarea id="education" name="education" rows="3" required></textarea>
+
+            <label for="experience">Work Experience:</label>
+            <textarea id="experience" name="experience" rows="3" required></textarea>
+
+            <label for="skills">Skills (comma-separated):</label>
+            <input type="text" id="skills" name="skills" required>
+
+            <label for="languages">Languages (comma-separated):</label>
+            <input type="text" id="languages" name="languages" required>
+
+            <label for="photo">Upload Profile Picture:</label>
+            <input type="file" id="photo" accept="image/*" required>
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <button type="button" onclick="generateResume()">Generate Resume</button>
+            <button type="button" onclick="downloadPDF()">Download as PDF</button>
+        </form>
+    </section>
+
+    <!-- Resume Preview Section -->
+    <section class="resume-preview" id="resumePreview">
+        <!-- Dynamically generated resume will appear here -->
+    </section>
+
+    <!-- Shareable Link and Social Media Section -->
+    <section id="shareable-link-container" style="display: none; margin-top: 20px;">
+        <p><strong>Shareable Resume Link:</strong></p>
+        <a id="shareable-link" href="" target="_blank" style="color: #1a73e8; text-decoration: underline;"></a>
+
+        <div class="social-share" style="margin-top: 10px;">
+            <p><strong>Share on Social Media:</strong></p>
+            <a id="facebook-share" target="_blank" href="" style="margin-right: 10px;">
+                <img src="facebook.svg" alt="Facebook" width="24" height="24"> Facebook
+            </a>
+            <a id="twitter-share" target="_blank" href="" style="margin-right: 10px;">
+                <img src="twitter.svg" alt="Twitter" width="24" height="24"> Twitter
+            </a>
+            <a id="linkedin-share" target="_blank" href="">
+                <img src="linkedin.svg" alt="LinkedIn" width="24" height="24"> LinkedIn
+            </a>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
